@@ -10,7 +10,11 @@
 //require_once __DIR__ . '/bin/cilex.phar';
 require __DIR__ . "/vendor/autoload.php";
 
-$app = new \Cilex\Application('Cilex');
-$app->command(new \Cilex\Command\TestCommand());
-$app->command(new \Cilex\Command\GreetCommand());
+use Cilex\Application;
+use Cilex\Command\GreetCommand;
+use Cilex\Command\TestCommand;
+
+$app = new Application('Cilex');
+$app->command(new TestCommand());
+$app->command(new GreetCommand());
 $app->run();
